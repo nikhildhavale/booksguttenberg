@@ -9,6 +9,9 @@
 import UIKit
 struct CategoryConstant {
     static let categoryCell = "categoryCell"
+    static let marginConstant = CGFloat(20)
+    static let itemHeight = CGFloat(50)
+    static let showBooks = "showBooks"
 }
 
 class GutenbergCategoryCollectionViewController: UICollectionViewController {
@@ -22,7 +25,51 @@ class GutenbergCategoryCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getCategoryList()
-        
+        if let layout = collectionViewLayout as?
+            UICollectionViewFlowLayout{
+            if UIDevice.current.userInterfaceIdiom == .pad
+            {
+                setItemSizeForiPad()
+            }
+            else
+            {
+                
+                let itemWidth = min(UIScreen.main.bounds.width, UIScreen.main.bounds.height)  - CategoryConstant.marginConstant
+
+                layout.itemSize = CGSize(width:itemWidth , height: CategoryConstant.itemHeight)
+            }
+
+        }
+    }
+    func setItemSizeForiPad()
+    {
+        let width = UIScreen.main.bounds.width   - CategoryConstant.marginConstant*2
+        var itemWidth = width
+        if self.view.bounds.width > self.view.bounds.height
+        {
+           itemWidth =  width/3
+        }
+        else
+        {
+            itemWidth = width/2
+        }
+        if let layout = collectionViewLayout as?
+                   UICollectionViewFlowLayout{
+            layout.itemSize = CGSize(width:itemWidth , height: CategoryConstant.itemHeight)
+        }
+    }
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        coordinator.animate(alongsideTransition: nil, completion: {(context) in
+            if self.traitCollection.userInterfaceIdiom == .pad
+            {
+                self.setItemSizeForiPad()
+                self.collectionViewLayout.invalidateLayout()
+                self.collectionView.reloadData()
+            }
+        })
+
+
     }
     func getCategoryList()
     {
@@ -67,7 +114,11 @@ class GutenbergCategoryCollectionViewController: UICollectionViewController {
         cell.updateCell(category:category )
         return cell
     }
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let category = categoryList[indexPath.row]
 
+        self.parent?.performSegue(withIdentifier: CategoryConstant.showBooks, sender: category)
+    }
     // MARK: UICollectionViewDelegate
 
     /*
