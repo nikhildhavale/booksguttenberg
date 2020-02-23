@@ -56,7 +56,8 @@ class BooksViewController: UIViewController {
             components.scheme = "https"
             components.host = "gutendex.com"
             components.path = URLConstant.books
-            components.queryItems = [URLQueryItem(name: URLConstant.queryTopic, value: categoryTitle.lowercased())]
+            components.queryItems = [URLQueryItem(name: URLConstant.queryTopic, value: categoryTitle.lowercased()),
+                                     URLQueryItem(name: "mime_type", value: BookItemConstant.bookItemImage)]
             networkSession.setupGetRequest(url: components.url!)
             
             

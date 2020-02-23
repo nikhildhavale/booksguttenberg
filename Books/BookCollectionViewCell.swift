@@ -9,6 +9,9 @@
 import UIKit
 struct BookItemConstant {
     static let bookItemImage = "image/jpeg"
+    static let html = "text/plain; charset=utf-8"
+    static let pdf = "application/pdf"
+    static let txt = "text/plain; charset=utf-8"
 }
 class BookCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageView: SecureImageView!
