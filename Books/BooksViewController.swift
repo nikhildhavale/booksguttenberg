@@ -11,6 +11,7 @@ import UIKit
 class BooksViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     var category:Category?
+    @IBOutlet weak var loadingIndicator:UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = true
@@ -30,23 +31,27 @@ class BooksViewController: UIViewController {
                 {
                     let bookResponse = try JSONDecoder().decode(BookResponse.self, from: data)
                     
-                        if  let bookList = bookResponse.bookList
-                        {
-                            DispatchQueue.main.async {
-                               if let bookCollection = self.children.first as? BooksCollectionViewController
-                               {
+                    if  let bookList = bookResponse.bookList
+                    {
+                        DispatchQueue.main.async {
+                            if let bookCollection = self.children.first as? BooksCollectionViewController
+                            {
                                 bookCollection.bookList = bookList
-
-                                }
+                                self.loadingIndicator.isHidden = true
                             }
                         }
+                    }
                     
                 }
                 catch {
                     print(error)
                 }
-
+                
             }, errorBlock: {(error) in
+                DispatchQueue.main.async {
+                    self.loadingIndicator.isHidden = true
+                    
+                }
                 
             }, cancelBlock: {
                 

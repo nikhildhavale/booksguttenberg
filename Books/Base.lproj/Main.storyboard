@@ -122,17 +122,27 @@
                                     <segue destination="8eY-Md-805" kind="embed" id="bw4-59-iTD"/>
                                 </connections>
                             </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zAI-bt-aDb">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <connections>
+                                    <segue destination="c4v-4W-p2A" kind="embed" id="5Wd-rS-ppF"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" name="white"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="2d0-hQ-ciX" secondAttribute="bottom" constant="20" symbolic="YES" id="9fI-YT-Jvb"/>
                             <constraint firstItem="RnO-td-g97" firstAttribute="top" secondItem="nP4-dK-yn1" secondAttribute="bottom" symbolic="YES" id="JMd-sH-hmz"/>
+                            <constraint firstItem="vkA-1j-YjM" firstAttribute="bottom" secondItem="zAI-bt-aDb" secondAttribute="bottom" id="Ouz-1t-3ln"/>
                             <constraint firstItem="vkA-1j-YjM" firstAttribute="trailing" secondItem="2d0-hQ-ciX" secondAttribute="trailing" constant="10" id="PDC-bx-wde"/>
                             <constraint firstAttribute="trailing" secondItem="nP4-dK-yn1" secondAttribute="trailing" constant="10" id="RKI-9s-Lyh"/>
                             <constraint firstItem="nP4-dK-yn1" firstAttribute="top" secondItem="vkA-1j-YjM" secondAttribute="top" id="TZe-k6-9Tp"/>
+                            <constraint firstItem="zAI-bt-aDb" firstAttribute="leading" secondItem="vkA-1j-YjM" secondAttribute="leading" id="UQW-0i-4g0"/>
                             <constraint firstItem="vkA-1j-YjM" firstAttribute="trailing" secondItem="RnO-td-g97" secondAttribute="trailing" constant="10" id="Vby-Nr-x6z"/>
+                            <constraint firstItem="vkA-1j-YjM" firstAttribute="trailing" secondItem="zAI-bt-aDb" secondAttribute="trailing" id="Xae-dh-PUF"/>
                             <constraint firstItem="2d0-hQ-ciX" firstAttribute="top" secondItem="RnO-td-g97" secondAttribute="bottom" symbolic="YES" id="XuC-AY-Iav"/>
                             <constraint firstItem="2d0-hQ-ciX" firstAttribute="leading" secondItem="vkA-1j-YjM" secondAttribute="leading" constant="10" id="aLs-R2-KQQ"/>
+                            <constraint firstItem="zAI-bt-aDb" firstAttribute="top" secondItem="vkA-1j-YjM" secondAttribute="top" id="eSf-4U-YWL"/>
                             <constraint firstItem="RnO-td-g97" firstAttribute="leading" secondItem="vkA-1j-YjM" secondAttribute="leading" constant="10" id="g5x-3t-4XF"/>
                             <constraint firstItem="nP4-dK-yn1" firstAttribute="leading" secondItem="bEE-mZ-X9P" secondAttribute="leading" constant="10" id="gyz-49-w3L"/>
                         </constraints>
@@ -140,6 +150,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="T9R-bf-v9N"/>
                     <connections>
+                        <outlet property="loadingIndicator" destination="zAI-bt-aDb" id="Lrd-Zn-a18"/>
                         <outlet property="titleLabel" destination="Tg2-MU-VNs" id="2iC-ah-Pl2"/>
                     </connections>
                 </viewController>
@@ -152,7 +163,7 @@
             <objects>
                 <collectionViewController id="8eY-Md-805" customClass="BooksCollectionViewController" customModule="Books" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="aW3-wg-tfr">
-                        <rect key="frame" x="0.0" y="0.0" width="394" height="673"/>
+                        <rect key="frame" x="0.0" y="0.0" width="394" height="673.33333333333337"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VQG-qy-aSO">
@@ -177,7 +188,7 @@
             <objects>
                 <collectionViewController id="h4n-m6-XZC" customClass="GutenbergCategoryCollectionViewController" customModule="Books" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="BEm-eU-jlk">
-                        <rect key="frame" x="0.0" y="0.0" width="394" height="572"/>
+                        <rect key="frame" x="0.0" y="0.0" width="394" height="636"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="G9w-rC-N4J">
@@ -269,6 +280,30 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QL7-rq-yne" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="140.57971014492756" y="65.625"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ovW-ia-f2I">
+            <objects>
+                <viewController id="c4v-4W-p2A" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iig-d1-MGc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="SgB-Ub-sjL">
+                                <rect key="frame" x="188.66666666666666" y="368.66666666666669" width="37" height="37"/>
+                                <color key="color" name="blue"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" name="white"/>
+                        <constraints>
+                            <constraint firstItem="SgB-Ub-sjL" firstAttribute="centerX" secondItem="iig-d1-MGc" secondAttribute="centerX" id="8T4-lK-8yJ"/>
+                            <constraint firstItem="SgB-Ub-sjL" firstAttribute="centerY" secondItem="iig-d1-MGc" secondAttribute="centerY" id="htN-fB-cuS"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x2D-Ue-ree" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="222" y="1144"/>
         </scene>
     </scenes>
     <resources>
