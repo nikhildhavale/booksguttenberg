@@ -77,28 +77,85 @@
             </objects>
             <point key="canvasLocation" x="1050.7246376811595" y="65.625"/>
         </scene>
-        <!--View Controller-->
+        <!--Books View Controller-->
         <scene sceneID="ZxX-4r-vPU">
             <objects>
-                <viewController id="UM6-c6-fwW" sceneMemberID="viewController">
+                <viewController id="UM6-c6-fwW" customClass="BooksViewController" customModule="Books" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bEE-mZ-X9P">
                         <rect key="frame" x="0.0" y="0.0" width="810" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nP4-dK-yn1">
+                                <rect key="frame" x="10" y="50" width="790" height="64"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A0w-k3-E1a">
+                                        <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="A0w-k3-E1a" secondAttribute="height" multiplier="1:1" id="ZrT-Iw-BIZ"/>
+                                        </constraints>
+                                        <color key="tintColor" name="blue"/>
+                                        <state key="normal" image="back"/>
+                                        <connections>
+                                            <action selector="backButtonClicked:" destination="UM6-c6-fwW" eventType="touchUpInside" id="05t-bP-v4g"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fiction" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tg2-MU-VNs">
+                                        <rect key="frame" x="64" y="0.0" width="726" height="64"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="48"/>
+                                        <color key="textColor" name="blue"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="vkA-1j-YjM" firstAttribute="trailing" secondItem="nP4-dK-yn1" secondAttribute="trailing" constant="10" id="9Dn-0E-Mps"/>
+                            <constraint firstItem="nP4-dK-yn1" firstAttribute="top" secondItem="vkA-1j-YjM" secondAttribute="top" id="SXI-yF-z9K"/>
+                            <constraint firstItem="nP4-dK-yn1" firstAttribute="leading" secondItem="vkA-1j-YjM" secondAttribute="leading" constant="10" id="YZ2-rd-6l2"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="vkA-1j-YjM"/>
                     </view>
                     <navigationItem key="navigationItem" id="T9R-bf-v9N"/>
+                    <connections>
+                        <outlet property="titleLabel" destination="Tg2-MU-VNs" id="2iC-ah-Pl2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bRT-oj-aJ6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="907" y="760"/>
+        </scene>
+        <!--Collection View Controller-->
+        <scene sceneID="SRc-EF-c4u">
+            <objects>
+                <collectionViewController id="8eY-Md-805" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="aW3-wg-tfr">
+                        <rect key="frame" x="0.0" y="0.0" width="810" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VQG-qy-aSO">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells/>
+                        <connections>
+                            <outlet property="dataSource" destination="8eY-Md-805" id="uMy-c6-BG6"/>
+                            <outlet property="delegate" destination="8eY-Md-805" id="F79-FC-384"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="96V-et-t3f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1593" y="927"/>
         </scene>
         <!--Gutenberg Category Collection View Controller-->
         <scene sceneID="mlg-sx-xkt">
             <objects>
                 <collectionViewController id="h4n-m6-XZC" customClass="GutenbergCategoryCollectionViewController" customModule="Books" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="BEm-eU-jlk">
-                        <rect key="frame" x="0.0" y="0.0" width="790" height="929"/>
+                        <rect key="frame" x="0.0" y="0.0" width="790" height="905"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="G9w-rC-N4J">
@@ -193,6 +250,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="back" width="32" height="32"/>
         <image name="forward" width="32" height="32"/>
         <image name="pattern" width="640" height="105"/>
         <namedColor name="blue">

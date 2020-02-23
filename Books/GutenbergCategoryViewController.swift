@@ -16,7 +16,9 @@ class GutenbergCategoryViewController: UIViewController {
         self.navigationController?.navigationBar.isHidden = true 
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        if let destination = segue.destination as? BooksViewController , let category = sender as? Category {
+            destination.category = category
+        }
     }
 
 }

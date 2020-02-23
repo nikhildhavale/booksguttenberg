@@ -38,6 +38,7 @@
 		AEC19C812402B148002A0DDE /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC19C802402B148002A0DDE /* CategoryCollectionViewCell.swift */; };
 		AEC19C842402B5C2002A0DDE /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC19C832402B5C2002A0DDE /* Category.swift */; };
 		AEC19C862402BAC2002A0DDE /* category.json in Resources */ = {isa = PBXBuildFile; fileRef = AEC19C852402BAC2002A0DDE /* category.json */; };
+		AEC19C882402D7D1002A0DDE /* BooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC19C872402D7D1002A0DDE /* BooksViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,7 @@
 		AEC19C802402B148002A0DDE /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		AEC19C832402B5C2002A0DDE /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		AEC19C852402BAC2002A0DDE /* category.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = category.json; sourceTree = "<group>"; };
+		AEC19C872402D7D1002A0DDE /* BooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 				AEC19C402402A3C0002A0DDE /* GutenbergCategoryViewController.swift */,
 				AEC19C7E2402B093002A0DDE /* GutenbergCategoryCollectionViewController.swift */,
 				AEC19C802402B148002A0DDE /* CategoryCollectionViewCell.swift */,
+				AEC19C872402D7D1002A0DDE /* BooksViewController.swift */,
 				AEC19C422402A3C0002A0DDE /* Main.storyboard */,
 				AEC19C4A2402A3C5002A0DDE /* LaunchScreen.storyboard */,
 				AEC19C4D2402A3C5002A0DDE /* Info.plist */,
@@ -269,6 +272,7 @@
 				AEC19C472402A3C0002A0DDE /* Books.xcdatamodeld in Sources */,
 				AEC19C412402A3C0002A0DDE /* GutenbergCategoryViewController.swift in Sources */,
 				AEC19C3D2402A3C0002A0DDE /* AppDelegate.swift in Sources */,
+				AEC19C882402D7D1002A0DDE /* BooksViewController.swift in Sources */,
 				AEC19C842402B5C2002A0DDE /* Category.swift in Sources */,
 				AEC19C3F2402A3C0002A0DDE /* SceneDelegate.swift in Sources */,
 				AEC19C7C2402AB11002A0DDE /* Constants.swift in Sources */,
