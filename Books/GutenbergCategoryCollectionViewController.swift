@@ -9,7 +9,7 @@
 import UIKit
 struct CategoryConstant {
     static let categoryCell = "categoryCell"
-    static let marginConstant = CGFloat(20)
+    static let marginConstant = UIDevice.current.userInterfaceIdiom == .phone ? CGFloat(30): CGFloat(40)
     static let itemHeight = CGFloat(50)
     static let showBooks = "showBooks"
 }
@@ -43,7 +43,7 @@ class GutenbergCategoryCollectionViewController: UICollectionViewController {
     }
     func setItemSizeForiPad()
     {
-        let width = UIScreen.main.bounds.width   - CategoryConstant.marginConstant*2
+        let width = UIScreen.main.bounds.width   - CategoryConstant.marginConstant
         var itemWidth = width
         if self.view.bounds.width > self.view.bounds.height
         {

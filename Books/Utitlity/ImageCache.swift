@@ -66,7 +66,7 @@ class ImageCache {
         
     }
     static func checkIfFileExist(_ path:String) -> Bool {
-        var paths  = cacheDirectory
+        let paths  = cacheDirectory
         let splitImagePath = path.components(separatedBy: "?")
         let firstString = splitImagePath[0]
         let filePath = "\(paths)/\((firstString as NSString).lastPathComponent)"
@@ -74,7 +74,7 @@ class ImageCache {
         
     }
     static func deleteFileAtPath(_ path:String, editionId:String)  {
-        var paths  = cacheDirectory
+        let paths  = cacheDirectory
         let splitImagePath = path.components(separatedBy: "?")
         let firstString = splitImagePath[0]
         let filePath = "\(paths)/\((firstString as NSString).lastPathComponent)"
@@ -91,7 +91,7 @@ class ImageCache {
             if shouldSaveToDisk  && result.range(of: "Document") == nil
             {
                 let fileManager = FileManager.default
-                var paths  = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+                let paths  = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
                 var directory = ObjCBool(true)
                 let splitImagePath = path.components(separatedBy: "?")
                 let firstString = splitImagePath[0]

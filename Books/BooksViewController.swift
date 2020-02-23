@@ -25,20 +25,39 @@ class BooksViewController: UIViewController {
         if let categoryTitle = category?.title
         {
             let networkSession = NetworkSession(completionBlock: {(data) in
-                if let bookResponse = try? JSONDecoder().decode(BookResponse.self, from: data)
+                
+                do
                 {
-                    if let bookCollection = self.children.first as? BooksCollectionViewController , let bookList = bookResponse.bookList{
-                        bookCollection.bookList = bookList
-                    }
+                    let bookResponse = try JSONDecoder().decode(BookResponse.self, from: data)
+                    
+                        if  let bookList = bookResponse.bookList
+                        {
+                            DispatchQueue.main.async {
+                               if let bookCollection = self.children.first as? BooksCollectionViewController
+                               {
+                                bookCollection.bookList = bookList
+
+                                }
+                            }
+                        }
+                    
                 }
+                catch {
+                    print(error)
+                }
+
             }, errorBlock: {(error) in
                 
             }, cancelBlock: {
                 
             })
-            let urlString =  URLConstant.baseurl + URLConstant.topic + categoryTitle.lowercased()
             
-            networkSession.setupGetRequest(urlString: urlString)
+            var components = URLComponents()
+            components.scheme = "https"
+            components.host = "gutendex.com"
+            components.path = URLConstant.books
+            components.queryItems = [URLQueryItem(name: URLConstant.queryTopic, value: categoryTitle.lowercased())]
+            networkSession.setupGetRequest(url: components.url!)
             
             
         }

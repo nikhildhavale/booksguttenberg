@@ -17,9 +17,10 @@ class NetworkSession {
         self.errorBlock = errorBlock
         self.cancelBlock = cancelBlock
     }
-    func setupGetRequest(urlString:String){
-        if let url = URL(string: urlString) {
-            task =  URLSession.shared.dataTask(with: url as URL, completionHandler: {(data,request,error) in
+    func setupGetRequest(url:URL){
+        
+        
+            task =  URLSession.shared.dataTask(with: url, completionHandler: {(data,request,error) in
                 if let error = error {
                     self.errorBlock?(error)
                 }
@@ -28,7 +29,7 @@ class NetworkSession {
                 }
             })
             task?.resume()
-        }
+        
     }
     func cancel(){
         task?.cancel()

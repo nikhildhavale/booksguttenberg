@@ -27,6 +27,7 @@ struct StringsConstant {
 }
 
 struct  URLConstant {
-    static let baseurl = "​http://skunkworks.ignitesol.com:8000/books/​"
-    static let topic = "?topic="
+    static let baseurl = "​https://gutendex.com/"
+    static let books = "/books"
+    static let queryTopic = "topic"
 }

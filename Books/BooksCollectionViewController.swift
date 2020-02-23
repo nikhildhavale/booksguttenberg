@@ -9,13 +9,18 @@
 import UIKit
 struct BooksConstant {
     static let identifier = "BookCollectionViewCell"
+    static let widthMargin = CGFloat(20)
+    static let ratio = CGFloat(265.0/200.0)
 }
 
 class BooksCollectionViewController: UICollectionViewController {
     var bookList = [Book]()
     {
         didSet{
-            collectionView?.reloadData()
+            DispatchQueue.main.async {
+                self.collectionView?.reloadData()
+
+            }
         }
     }
     override func viewDidLoad() {
@@ -26,10 +31,29 @@ class BooksCollectionViewController: UICollectionViewController {
 
         // Register cell classes
         self.collectionView!.register(UINib(nibName: "BookCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: BooksConstant.identifier)
-
+        setItemWidth()
         
     }
-
+    func setItemWidth()
+    {
+        if let layout = collectionViewLayout as? UICollectionViewFlowLayout
+          {
+            let count = CGFloat(3)
+            
+            var width = min(UIScreen.main.bounds.width, UIScreen.main.bounds.height) - BooksConstant.widthMargin - count*10
+            width = width/count
+            let height = CGFloat(265)
+            layout.itemSize = CGSize(width: width, height: height)
+          }
+    }
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        coordinator.animate(alongsideTransition: nil, completion: {(context) in
+            self.setItemWidth()
+            self.collectionViewLayout.invalidateLayout()
+            self.collectionView.reloadData()
+        })
+        super.viewWillTransition(to: size, with: coordinator)
+    }
     /*
     // MARK: - Navigation
 

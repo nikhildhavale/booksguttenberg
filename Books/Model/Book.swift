@@ -15,7 +15,7 @@ class BookResponse:Codable
     }
 }
 class Book: Codable {
-    var id:String?
+    var id:Int?
     var title:String?
     var authors:[Author]?
     var subjects:[String]?

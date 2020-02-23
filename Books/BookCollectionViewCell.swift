@@ -30,6 +30,6 @@ class BookCollectionViewCell: UICollectionViewCell {
         bookNameLabel.textColor = ColorConstant.darkergrey
         bookAuthorLabel.font = UIFont.BookAuthor
         bookAuthorLabel.text = book.authorNames
-        bookAuthorLabel.textColor = ColorConstant.lightgrey
+        bookAuthorLabel.textColor = ColorConstant.darkgrey
     }
 }
