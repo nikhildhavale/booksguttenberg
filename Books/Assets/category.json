@@ -1,0 +1,30 @@
+{
+  "categoryList": [
+    {
+      "icon" : "Fiction",
+      "title":"FICTION"
+      
+    },
+    {
+         "icon" : "Drama",
+      "title":"DRAMA"
+    },
+    {
+         "icon" : "Humor",
+      "title":"HUMOR"
+    },
+    {
+         "icon" : "Politics",
+      "title":"POLITICS"
+    },
+    {
+         "icon" : "History",
+      "title":"HISTORY"
+    },
+        {
+         "icon" : "Adventure",
+      "title":"ADVENTURE"
+    }
+    
+  ]
+}
