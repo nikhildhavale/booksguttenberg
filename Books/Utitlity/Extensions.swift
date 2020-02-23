@@ -102,3 +102,11 @@ extension UIView {
         }
     }
 }
+extension String {
+    func stringByAppendingPathComponent(_ path: String) -> String {
+        
+        let nsSt = self as NSString
+        
+        return nsSt.appendingPathComponent(path)
+    }
+}

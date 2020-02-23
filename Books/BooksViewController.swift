@@ -15,21 +15,46 @@ class BooksViewController: UIViewController {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = true
         titleLabel.text = category?.title
-        // Do any additional setup after loading the view.
+        requestBooksForCategory()
+        
+        
     }
-    
+    func requestBooksForCategory()
+    {
+        
+        if let categoryTitle = category?.title
+        {
+            let networkSession = NetworkSession(completionBlock: {(data) in
+                if let bookResponse = try? JSONDecoder().decode(BookResponse.self, from: data)
+                {
+                    if let bookCollection = self.children.first as? BooksCollectionViewController , let bookList = bookResponse.bookList{
+                        bookCollection.bookList = bookList
+                    }
+                }
+            }, errorBlock: {(error) in
+                
+            }, cancelBlock: {
+                
+            })
+            let urlString =  URLConstant.baseurl + URLConstant.topic + categoryTitle.lowercased()
+            
+            networkSession.setupGetRequest(urlString: urlString)
+            
+            
+        }
+    }
     @IBAction func backButtonClicked(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mq5-Wd-eCZ">
-    <device id="ipad10_2" orientation="portrait" layout="fullscreen" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -22,28 +22,28 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="GutenbergCategoryViewController" customModule="Books" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="810" height="1080"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pattern" translatesAutoresizingMaskIntoConstraints="NO" id="9aN-Vw-ufB">
-                                <rect key="frame" x="0.0" y="50" width="810" height="210"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="210"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gutenberg Project" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KWX-Ge-QY9">
-                                <rect key="frame" x="10" y="60" width="790" height="56"/>
+                                <rect key="frame" x="10" y="98" width="394" height="56"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="48"/>
                                 <color key="textColor" name="blue"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A social cataloging website that allows you to freely search its database of books, annotations, and reviews." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8JC-5n-iap">
-                                <rect key="frame" x="10" y="124" width="790" height="19"/>
+                                <rect key="frame" x="10" y="162" width="394" height="56"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZTs-kT-2ar">
-                                <rect key="frame" x="10" y="151" width="790" height="929"/>
+                                <rect key="frame" x="10" y="226" width="394" height="636"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <segue destination="h4n-m6-XZC" kind="embed" id="e8B-HM-ZdA"/>
@@ -82,14 +82,15 @@
             <objects>
                 <viewController id="UM6-c6-fwW" customClass="BooksViewController" customModule="Books" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bEE-mZ-X9P">
-                        <rect key="frame" x="0.0" y="0.0" width="810" height="1080"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nP4-dK-yn1">
-                                <rect key="frame" x="10" y="50" width="790" height="64"/>
+                                <rect key="frame" x="10" y="88" width="394" height="56"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A0w-k3-E1a">
-                                        <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="56" height="56"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="A0w-k3-E1a" secondAttribute="height" multiplier="1:1" id="ZrT-Iw-BIZ"/>
                                         </constraints>
@@ -100,19 +101,40 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fiction" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tg2-MU-VNs">
-                                        <rect key="frame" x="64" y="0.0" width="726" height="64"/>
+                                        <rect key="frame" x="56" y="0.0" width="338" height="56"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="48"/>
                                         <color key="textColor" name="blue"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" secondItem="Tg2-MU-VNs" secondAttribute="height" id="WNn-vB-eQB"/>
+                                </constraints>
                             </stackView>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="RnO-td-g97">
+                                <rect key="frame" x="10" y="144" width="394" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2d0-hQ-ciX">
+                                <rect key="frame" x="10" y="200" width="394" height="676"/>
+                                <connections>
+                                    <segue destination="8eY-Md-805" kind="embed" id="bw4-59-iTD"/>
+                                </connections>
+                            </containerView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" name="white"/>
                         <constraints>
-                            <constraint firstItem="vkA-1j-YjM" firstAttribute="trailing" secondItem="nP4-dK-yn1" secondAttribute="trailing" constant="10" id="9Dn-0E-Mps"/>
-                            <constraint firstItem="nP4-dK-yn1" firstAttribute="top" secondItem="vkA-1j-YjM" secondAttribute="top" id="SXI-yF-z9K"/>
-                            <constraint firstItem="nP4-dK-yn1" firstAttribute="leading" secondItem="vkA-1j-YjM" secondAttribute="leading" constant="10" id="YZ2-rd-6l2"/>
+                            <constraint firstAttribute="bottom" secondItem="2d0-hQ-ciX" secondAttribute="bottom" constant="20" symbolic="YES" id="9fI-YT-Jvb"/>
+                            <constraint firstItem="RnO-td-g97" firstAttribute="top" secondItem="nP4-dK-yn1" secondAttribute="bottom" symbolic="YES" id="JMd-sH-hmz"/>
+                            <constraint firstItem="vkA-1j-YjM" firstAttribute="trailing" secondItem="2d0-hQ-ciX" secondAttribute="trailing" constant="10" id="PDC-bx-wde"/>
+                            <constraint firstAttribute="trailing" secondItem="nP4-dK-yn1" secondAttribute="trailing" constant="10" id="RKI-9s-Lyh"/>
+                            <constraint firstItem="nP4-dK-yn1" firstAttribute="top" secondItem="vkA-1j-YjM" secondAttribute="top" id="TZe-k6-9Tp"/>
+                            <constraint firstItem="vkA-1j-YjM" firstAttribute="trailing" secondItem="RnO-td-g97" secondAttribute="trailing" constant="10" id="Vby-Nr-x6z"/>
+                            <constraint firstItem="2d0-hQ-ciX" firstAttribute="top" secondItem="RnO-td-g97" secondAttribute="bottom" symbolic="YES" id="XuC-AY-Iav"/>
+                            <constraint firstItem="2d0-hQ-ciX" firstAttribute="leading" secondItem="vkA-1j-YjM" secondAttribute="leading" constant="10" id="aLs-R2-KQQ"/>
+                            <constraint firstItem="RnO-td-g97" firstAttribute="leading" secondItem="vkA-1j-YjM" secondAttribute="leading" constant="10" id="g5x-3t-4XF"/>
+                            <constraint firstItem="nP4-dK-yn1" firstAttribute="leading" secondItem="bEE-mZ-X9P" secondAttribute="leading" constant="10" id="gyz-49-w3L"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vkA-1j-YjM"/>
                     </view>
@@ -125,16 +147,16 @@
             </objects>
             <point key="canvasLocation" x="907" y="760"/>
         </scene>
-        <!--Collection View Controller-->
+        <!--Books Collection View Controller-->
         <scene sceneID="SRc-EF-c4u">
             <objects>
-                <collectionViewController id="8eY-Md-805" sceneMemberID="viewController">
+                <collectionViewController id="8eY-Md-805" customClass="BooksCollectionViewController" customModule="Books" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="aW3-wg-tfr">
-                        <rect key="frame" x="0.0" y="0.0" width="810" height="1080"/>
+                        <rect key="frame" x="0.0" y="0.0" width="394" height="915"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VQG-qy-aSO">
-                            <size key="itemSize" width="50" height="50"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VQG-qy-aSO">
+                            <size key="itemSize" width="200" height="265"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -155,7 +177,7 @@
             <objects>
                 <collectionViewController id="h4n-m6-XZC" customClass="GutenbergCategoryCollectionViewController" customModule="Books" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="BEm-eU-jlk">
-                        <rect key="frame" x="0.0" y="0.0" width="790" height="905"/>
+                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="572"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="G9w-rC-N4J">
@@ -166,10 +188,8 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="categoryCell" id="q0a-gy-qTc" customClass="CategoryCollectionViewCell" customModule="Books" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="380" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Ru7-Ih-0SE">
-                                    <rect key="frame" x="0.0" y="0.0" width="380" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Sr4-k5-N5d">
@@ -180,7 +200,7 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JfP-hp-Vf7">
-                                            <rect key="frame" x="38" y="15" width="42" height="20"/>
+                                            <rect key="frame" x="38" y="14.666666666666664" width="46.666666666666657" height="21"/>
                                             <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -236,7 +256,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mq5-Wd-eCZ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dzd-Qd-Nn3">
-                        <rect key="frame" x="0.0" y="0.0" width="810" height="50"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -250,7 +270,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="back" width="32" height="32"/>
+        <image name="back" width="21.333333969116211" height="21.333333969116211"/>
         <image name="forward" width="32" height="32"/>
         <image name="pattern" width="640" height="105"/>
         <namedColor name="blue">
@@ -261,6 +281,9 @@
         </namedColor>
         <namedColor name="shadowColor">
             <color red="0.82745098039215681" green="0.81960784313725488" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="white">
+            <color red="0.97254901960784312" green="0.96862745098039216" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

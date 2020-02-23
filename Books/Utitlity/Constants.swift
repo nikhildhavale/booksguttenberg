@@ -25,3 +25,8 @@ struct StringsConstant {
     static let search = "Search"
     
 }
+
+struct  URLConstant {
+    static let baseurl = "​http://skunkworks.ignitesol.com:8000/books/​"
+    static let topic = "?topic="
+}

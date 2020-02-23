@@ -39,6 +39,14 @@
 		AEC19C842402B5C2002A0DDE /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC19C832402B5C2002A0DDE /* Category.swift */; };
 		AEC19C862402BAC2002A0DDE /* category.json in Resources */ = {isa = PBXBuildFile; fileRef = AEC19C852402BAC2002A0DDE /* category.json */; };
 		AEC19C882402D7D1002A0DDE /* BooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC19C872402D7D1002A0DDE /* BooksViewController.swift */; };
+		AEC19C8A2402DDBA002A0DDE /* BooksCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC19C892402DDBA002A0DDE /* BooksCollectionViewController.swift */; };
+		AEC19C8D2402DE02002A0DDE /* BookCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC19C8B2402DE02002A0DDE /* BookCollectionViewCell.swift */; };
+		AEC19C8E2402DE02002A0DDE /* BookCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEC19C8C2402DE02002A0DDE /* BookCollectionViewCell.xib */; };
+		AEC19C922402E095002A0DDE /* SecureImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC19C8F2402E095002A0DDE /* SecureImageView.swift */; };
+		AEC19C932402E095002A0DDE /* IconDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC19C902402E095002A0DDE /* IconDownloader.swift */; };
+		AEC19C942402E095002A0DDE /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC19C912402E095002A0DDE /* ImageCache.swift */; };
+		AEC19C962402E2B4002A0DDE /* NetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC19C952402E2B4002A0DDE /* NetworkSession.swift */; };
+		AEC19C982402E3A3002A0DDE /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC19C972402E3A3002A0DDE /* Book.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +84,14 @@
 		AEC19C832402B5C2002A0DDE /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		AEC19C852402BAC2002A0DDE /* category.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = category.json; sourceTree = "<group>"; };
 		AEC19C872402D7D1002A0DDE /* BooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksViewController.swift; sourceTree = "<group>"; };
+		AEC19C892402DDBA002A0DDE /* BooksCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksCollectionViewController.swift; sourceTree = "<group>"; };
+		AEC19C8B2402DE02002A0DDE /* BookCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCollectionViewCell.swift; sourceTree = "<group>"; };
+		AEC19C8C2402DE02002A0DDE /* BookCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookCollectionViewCell.xib; sourceTree = "<group>"; };
+		AEC19C8F2402E095002A0DDE /* SecureImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecureImageView.swift; sourceTree = "<group>"; };
+		AEC19C902402E095002A0DDE /* IconDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconDownloader.swift; sourceTree = "<group>"; };
+		AEC19C912402E095002A0DDE /* ImageCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		AEC19C952402E2B4002A0DDE /* NetworkSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkSession.swift; sourceTree = "<group>"; };
+		AEC19C972402E3A3002A0DDE /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,7 +133,10 @@
 				AEC19C7E2402B093002A0DDE /* GutenbergCategoryCollectionViewController.swift */,
 				AEC19C802402B148002A0DDE /* CategoryCollectionViewCell.swift */,
 				AEC19C872402D7D1002A0DDE /* BooksViewController.swift */,
+				AEC19C892402DDBA002A0DDE /* BooksCollectionViewController.swift */,
 				AEC19C422402A3C0002A0DDE /* Main.storyboard */,
+				AEC19C8B2402DE02002A0DDE /* BookCollectionViewCell.swift */,
+				AEC19C8C2402DE02002A0DDE /* BookCollectionViewCell.xib */,
 				AEC19C4A2402A3C5002A0DDE /* LaunchScreen.storyboard */,
 				AEC19C4D2402A3C5002A0DDE /* Info.plist */,
 				AEC19C452402A3C0002A0DDE /* Books.xcdatamodeld */,
@@ -163,6 +182,10 @@
 		AEC19C7D2402AB1D002A0DDE /* Utitlity */ = {
 			isa = PBXGroup;
 			children = (
+				AEC19C952402E2B4002A0DDE /* NetworkSession.swift */,
+				AEC19C902402E095002A0DDE /* IconDownloader.swift */,
+				AEC19C912402E095002A0DDE /* ImageCache.swift */,
+				AEC19C8F2402E095002A0DDE /* SecureImageView.swift */,
 				AEC19C792402A7D7002A0DDE /* Extensions.swift */,
 				AEC19C7B2402AB11002A0DDE /* Constants.swift */,
 			);
@@ -173,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				AEC19C832402B5C2002A0DDE /* Category.swift */,
+				AEC19C972402E3A3002A0DDE /* Book.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -254,6 +278,7 @@
 				AEC19C782402A5DC002A0DDE /* Montserrat-BlackItalic.ttf in Resources */,
 				AEC19C752402A5DC002A0DDE /* Montserrat-Bold.ttf in Resources */,
 				AEC19C722402A5DC002A0DDE /* Montserrat-ExtraBoldItalic.ttf in Resources */,
+				AEC19C8E2402DE02002A0DDE /* BookCollectionViewCell.xib in Resources */,
 				AEC19C772402A5DC002A0DDE /* Montserrat-ExtraLightItalic.ttf in Resources */,
 				AEC19C6B2402A5DC002A0DDE /* Montserrat-Thin.ttf in Resources */,
 				AEC19C672402A5DC002A0DDE /* Montserrat-Italic.ttf in Resources */,
@@ -267,16 +292,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEC19C942402E095002A0DDE /* ImageCache.swift in Sources */,
 				AEC19C812402B148002A0DDE /* CategoryCollectionViewCell.swift in Sources */,
+				AEC19C932402E095002A0DDE /* IconDownloader.swift in Sources */,
 				AEC19C7A2402A7D7002A0DDE /* Extensions.swift in Sources */,
 				AEC19C472402A3C0002A0DDE /* Books.xcdatamodeld in Sources */,
 				AEC19C412402A3C0002A0DDE /* GutenbergCategoryViewController.swift in Sources */,
 				AEC19C3D2402A3C0002A0DDE /* AppDelegate.swift in Sources */,
+				AEC19C8A2402DDBA002A0DDE /* BooksCollectionViewController.swift in Sources */,
 				AEC19C882402D7D1002A0DDE /* BooksViewController.swift in Sources */,
 				AEC19C842402B5C2002A0DDE /* Category.swift in Sources */,
 				AEC19C3F2402A3C0002A0DDE /* SceneDelegate.swift in Sources */,
+				AEC19C922402E095002A0DDE /* SecureImageView.swift in Sources */,
+				AEC19C8D2402DE02002A0DDE /* BookCollectionViewCell.swift in Sources */,
+				AEC19C962402E2B4002A0DDE /* NetworkSession.swift in Sources */,
 				AEC19C7C2402AB11002A0DDE /* Constants.swift in Sources */,
 				AEC19C7F2402B093002A0DDE /* GutenbergCategoryCollectionViewController.swift in Sources */,
+				AEC19C982402E3A3002A0DDE /* Book.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
