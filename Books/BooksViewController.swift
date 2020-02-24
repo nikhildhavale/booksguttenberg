@@ -12,20 +12,26 @@ class BooksViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     var category:Category?
     @IBOutlet weak var loadingIndicator:UIView!
+    @IBOutlet weak var searchBar:UISearchBar!
+    var networkSession:NetworkSession?
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = true
         titleLabel.text = category?.title
-        requestBooksForCategory()
-        
+        searchBar.setup()
+        requestBooksForCategory(searchString: nil)
         
     }
-    func requestBooksForCategory()
+
+   
+    func requestBooksForCategory(searchString:String?)
     {
         
         if let categoryTitle = category?.title
         {
-            let networkSession = NetworkSession(completionBlock: {(data) in
+            networkSession?.cancel()
+            UIApplication.shared.isNetworkActivityIndicatorVisible = true
+             networkSession = NetworkSession(completionBlock: {(data) in
                 
                 do
                 {
@@ -38,6 +44,8 @@ class BooksViewController: UIViewController {
                             {
                                 bookCollection.bookList = bookList
                                 self.loadingIndicator.isHidden = true
+                                UIApplication.shared.isNetworkActivityIndicatorVisible = false
+
                             }
                         }
                     }
@@ -50,20 +58,27 @@ class BooksViewController: UIViewController {
             }, errorBlock: {(error) in
                 DispatchQueue.main.async {
                     self.loadingIndicator.isHidden = true
-                    
+                    UIApplication.shared.isNetworkActivityIndicatorVisible = false
                 }
                 
             }, cancelBlock: {
-                
+                DispatchQueue.main.async {
+                    UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                }
             })
             
             var components = URLComponents()
             components.scheme = "https"
             components.host = "gutendex.com"
             components.path = URLConstant.books
-            components.queryItems = [URLQueryItem(name: URLConstant.queryTopic, value: categoryTitle.lowercased()),
-                                     URLQueryItem(name: "mime_type", value: BookItemConstant.bookItemImage)]
-            networkSession.setupGetRequest(url: components.url!)
+            var queryItems = [URLQueryItem(name: URLConstant.queryTopic, value: categoryTitle.lowercased()),
+                              URLQueryItem(name: URLConstant.mimeType, value: BookItemConstant.bookItemImage)]
+            if let searchText = searchString
+            {
+                queryItems.append(URLQueryItem(name: URLConstant.search, value: searchText))
+            }
+            components.queryItems = queryItems
+            networkSession?.setupGetRequest(url: components.url!)
             
             
         }
@@ -82,4 +97,18 @@ class BooksViewController: UIViewController {
      }
      */
     
+}
+extension BooksViewController:UISearchBarDelegate
+{
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        self.requestBooksForCategory(searchString: searchText)
+    }
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        self.requestBooksForCategory(searchString: searchBar.text)
+
+    }
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        self.requestBooksForCategory(searchString: searchBar.text)
+
+    }
 }

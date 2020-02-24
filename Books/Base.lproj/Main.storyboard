@@ -115,6 +115,9 @@
                             <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="RnO-td-g97">
                                 <rect key="frame" x="10" y="144" width="394" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="UM6-c6-fwW" id="YnC-vu-2ah"/>
+                                </connections>
                             </searchBar>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2d0-hQ-ciX">
                                 <rect key="frame" x="10" y="200" width="394" height="676"/>
@@ -151,6 +154,7 @@
                     <navigationItem key="navigationItem" id="T9R-bf-v9N"/>
                     <connections>
                         <outlet property="loadingIndicator" destination="zAI-bt-aDb" id="Lrd-Zn-a18"/>
+                        <outlet property="searchBar" destination="RnO-td-g97" id="2Jd-O5-sE7"/>
                         <outlet property="titleLabel" destination="Tg2-MU-VNs" id="2iC-ah-Pl2"/>
                     </connections>
                 </viewController>
@@ -163,7 +167,7 @@
             <objects>
                 <collectionViewController id="8eY-Md-805" customClass="BooksCollectionViewController" customModule="Books" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="aW3-wg-tfr">
-                        <rect key="frame" x="0.0" y="0.0" width="394" height="673.33333333333337"/>
+                        <rect key="frame" x="0.0" y="0.0" width="394" height="676"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VQG-qy-aSO">
@@ -299,6 +303,7 @@
                             <constraint firstItem="SgB-Ub-sjL" firstAttribute="centerX" secondItem="iig-d1-MGc" secondAttribute="centerX" id="8T4-lK-8yJ"/>
                             <constraint firstItem="SgB-Ub-sjL" firstAttribute="centerY" secondItem="iig-d1-MGc" secondAttribute="centerY" id="htN-fB-cuS"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="4WO-Zx-xWN"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x2D-Ue-ree" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

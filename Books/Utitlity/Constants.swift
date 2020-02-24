@@ -30,4 +30,6 @@ struct  URLConstant {
     static let baseurl = "​https://gutendex.com/"
     static let books = "/books"
     static let queryTopic = "topic"
+    static let mimeType = "mime_type"
+    static let search = "search"
 }
