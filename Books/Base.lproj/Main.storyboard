@@ -126,7 +126,7 @@
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zAI-bt-aDb">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="200" width="414" height="676"/>
                                 <connections>
                                     <segue destination="c4v-4W-p2A" kind="embed" id="5Wd-rS-ppF"/>
                                 </connections>
@@ -135,17 +135,17 @@
                         <color key="backgroundColor" name="white"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="2d0-hQ-ciX" secondAttribute="bottom" constant="20" symbolic="YES" id="9fI-YT-Jvb"/>
+                            <constraint firstAttribute="bottom" secondItem="zAI-bt-aDb" secondAttribute="bottom" constant="20" id="Gp5-mf-MaP"/>
                             <constraint firstItem="RnO-td-g97" firstAttribute="top" secondItem="nP4-dK-yn1" secondAttribute="bottom" symbolic="YES" id="JMd-sH-hmz"/>
-                            <constraint firstItem="vkA-1j-YjM" firstAttribute="bottom" secondItem="zAI-bt-aDb" secondAttribute="bottom" id="Ouz-1t-3ln"/>
                             <constraint firstItem="vkA-1j-YjM" firstAttribute="trailing" secondItem="2d0-hQ-ciX" secondAttribute="trailing" constant="10" id="PDC-bx-wde"/>
                             <constraint firstAttribute="trailing" secondItem="nP4-dK-yn1" secondAttribute="trailing" constant="10" id="RKI-9s-Lyh"/>
                             <constraint firstItem="nP4-dK-yn1" firstAttribute="top" secondItem="vkA-1j-YjM" secondAttribute="top" id="TZe-k6-9Tp"/>
                             <constraint firstItem="zAI-bt-aDb" firstAttribute="leading" secondItem="vkA-1j-YjM" secondAttribute="leading" id="UQW-0i-4g0"/>
+                            <constraint firstItem="zAI-bt-aDb" firstAttribute="top" secondItem="RnO-td-g97" secondAttribute="bottom" symbolic="YES" id="VGF-kF-wKV"/>
                             <constraint firstItem="vkA-1j-YjM" firstAttribute="trailing" secondItem="RnO-td-g97" secondAttribute="trailing" constant="10" id="Vby-Nr-x6z"/>
                             <constraint firstItem="vkA-1j-YjM" firstAttribute="trailing" secondItem="zAI-bt-aDb" secondAttribute="trailing" id="Xae-dh-PUF"/>
                             <constraint firstItem="2d0-hQ-ciX" firstAttribute="top" secondItem="RnO-td-g97" secondAttribute="bottom" symbolic="YES" id="XuC-AY-Iav"/>
                             <constraint firstItem="2d0-hQ-ciX" firstAttribute="leading" secondItem="vkA-1j-YjM" secondAttribute="leading" constant="10" id="aLs-R2-KQQ"/>
-                            <constraint firstItem="zAI-bt-aDb" firstAttribute="top" secondItem="vkA-1j-YjM" secondAttribute="top" id="eSf-4U-YWL"/>
                             <constraint firstItem="RnO-td-g97" firstAttribute="leading" secondItem="vkA-1j-YjM" secondAttribute="leading" constant="10" id="g5x-3t-4XF"/>
                             <constraint firstItem="nP4-dK-yn1" firstAttribute="leading" secondItem="bEE-mZ-X9P" secondAttribute="leading" constant="10" id="gyz-49-w3L"/>
                         </constraints>
@@ -160,14 +160,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bRT-oj-aJ6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="907" y="760"/>
+            <point key="canvasLocation" x="905.79710144927549" y="759.375"/>
         </scene>
         <!--Books Collection View Controller-->
         <scene sceneID="SRc-EF-c4u">
             <objects>
                 <collectionViewController id="8eY-Md-805" customClass="BooksCollectionViewController" customModule="Books" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="aW3-wg-tfr">
-                        <rect key="frame" x="0.0" y="0.0" width="394" height="676"/>
+                        <rect key="frame" x="0.0" y="0.0" width="394" height="673.33333333333337"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VQG-qy-aSO">
@@ -192,7 +192,7 @@
             <objects>
                 <collectionViewController id="h4n-m6-XZC" customClass="GutenbergCategoryCollectionViewController" customModule="Books" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="BEm-eU-jlk">
-                        <rect key="frame" x="0.0" y="0.0" width="394" height="636"/>
+                        <rect key="frame" x="0.0" y="0.0" width="394" height="572"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="G9w-rC-N4J">

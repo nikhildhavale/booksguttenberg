@@ -31,6 +31,8 @@ class BooksViewController: UIViewController {
         {
             networkSession?.cancel()
             UIApplication.shared.isNetworkActivityIndicatorVisible = true
+            self.loadingIndicator.isHidden = false
+
              networkSession = NetworkSession(completionBlock: {(data) in
                 
                 do
@@ -58,12 +60,13 @@ class BooksViewController: UIViewController {
             }, errorBlock: {(error) in
                 DispatchQueue.main.async {
                     self.loadingIndicator.isHidden = true
-                    UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                  //  UIApplication.shared.isNetworkActivityIndicatorVisible = false
                 }
                 
             }, cancelBlock: {
                 DispatchQueue.main.async {
-                    UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                     self.loadingIndicator.isHidden = true
+                   // UIApplication.shared.isNetworkActivityIndicatorVisible = false
                 }
             })
             
