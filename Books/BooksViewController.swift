@@ -106,8 +106,13 @@ extension BooksViewController:UISearchBarDelegate
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         self.requestBooksForCategory(searchString: searchText)
     }
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.borderColor = ColorConstant.blue
+        searchBar.borderWidth = 1
+    }
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         self.requestBooksForCategory(searchString: searchBar.text)
+        searchBar.borderWidth = 0
 
     }
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
